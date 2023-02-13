@@ -17,17 +17,13 @@ if len(sys.argv) == 1:
 args = parser.parse_args()
 
 # Classify the sequence
-args.seq = args.seq.upper()                 # Note we just added this line
-if re.search('^[ACGTU]+$', args.seq):
-    if re.search('T', args.seq):
-        print ('The sequence is DNA')
-    elif re.search('U', args.seq):
-        print ('The sequence is RNA')
-    else:
-        print ('The sequence can be DNA or RNA')
+args.seq = args.seq.upper()
+if re.search('^[ACGT]+$', args.seq):
+    print ('The sequence is DNA')
+elif re.search('^[ACGU]+$', args.seq):
+    print ('The sequence is RNA')
 else:
     print ('The sequence is not DNA nor RNA')
-
 
 # Search for the motif in the sequence (if provided)
 if args.motif:
@@ -37,3 +33,4 @@ if args.motif:
         print("FOUND")
     else:
         print("NOT FOUND")
+
