@@ -3,7 +3,7 @@
 import sys, re
 from argparse import ArgumentParser
 
-parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
+parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA(it accepts lower and upper case')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
 
 if len(sys.argv) == 1:
