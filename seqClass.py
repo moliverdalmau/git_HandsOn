@@ -2,6 +2,7 @@
 
 import sys, re
 from argparse import ArgumentParser
+from collections import Counter
 
 # Handle command line arguments
 parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
@@ -34,3 +35,6 @@ if args.motif:
     else:
         print("NOT FOUND")
 
+# Calculate nucleotide frequencies and percentages
+nucleotide_counts = Counter(args.seq)
+nucleotide_percentages = {base: count/len(args.seq)*100 for base, count in nucleotide_counts.items()}
