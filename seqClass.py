@@ -38,3 +38,7 @@ if args.motif:
 # Calculate nucleotide frequencies and percentages
 nucleotide_counts = Counter(args.seq)
 nucleotide_percentages = {base: count/len(args.seq)*100 for base, count in nucleotide_counts.items()}
+# Print the nucleotide percentages
+print("Nucleotide percentages:")
+for base, percentage in nucleotide_percentages.items():
+    print(f"{base}: {percentage:.2f}%")
